@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Моя первая страница!</title>
+</head>
+<body bgcolor="#F08080" text="#9370DB">ПРИВЕТ МИР!<br/>
+</body>
+</html>
