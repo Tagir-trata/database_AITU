@@ -21,7 +21,7 @@ class Card(sprite.Sprite):
         draw.rect(window, self.fill_color, self.rect)
 
 
-greenCard = Card(100, 100, 100, 250, GREEN)
+greenCard = Card(300, 300, 300, 3000, BLUE)
 
 run = True
 while run:
