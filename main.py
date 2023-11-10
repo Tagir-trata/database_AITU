@@ -1,34 +1,23 @@
-from pygame import *
+import psycopg2
 
-init()
-back = (200, 255, 255)
-win_width = 700
-win_height = 500
-GREEN = (0, 255, 0)
-window = display.set_mode((win_width, win_height))
-window.fill(back)
-display.set_caption('Моя первая игра')
-picture = transform.scale(image.load('background.jpg'), (700, 500))
-
-
-class Card(sprite.Sprite):
-    def __init__(self, width, height, x, y, color):
-        super().__init__()
-        self.rect = Rect(x, y, width, height)
-        self.fill_color = color
-
-    def draw(self):
-        draw.rect(window, self.fill_color, self.rect)
+conn= psycopg2.connect(host = 'localhost',
+                       database = 'super hero',
+                       user = 'postgres',
+                       password = '1234567'
+                       )
+usernames = [r[0] for r in cur.fetchall()]
+def binary_search(username):
+    username=input('введите логин')
+    cur = conn.cursor()
+    cur.execute('SELECT superhero_name FROM superhero.superhero ORDER BY superhero_name ASC LIMIT 15')
+    if username == (Tagir)
+    return True
+    print ('здравствуйте' username)
+    else:
+    return False
+    print('ssory bb2')
 
 
-greenCard = Card(300, 300, 300, 3000, BLUE)
-
-run = True
-while run:
-    window.blit(picture, (0, 0))
-    greenCard.draw()
-    time.delay(50)
-    for e in event.get():
-        if e.type == QUIT:
-            run = False  # break
-    display.update()
+conn.commit()
+cur.close()
+conn.close()
